@@ -41,6 +41,7 @@ Users should be able to:
 - Flexbox,
 - BEM,
 - Grid,
+- JavaScript.
 
 ### Useful resources
 
