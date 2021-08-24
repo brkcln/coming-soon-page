@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	background: #ffffff;
+	color: hsl(0, 36%, 70%);
+	-webkit-font-smoothing: antialiased;
+	font-size: 62.5%;
+	font-family: "Josefin Sans", sans-serif;
+	background: url(images/bg-pattern-desktop.svg) no-repeat;
+}
+button {
+	cursor: pointer;
+}
+h1 {
+	color: hsl(0, 36%, 70%);
+	font-size: 4.5rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	line-height: 5rem;
+	letter-spacing: 0.6rem;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+p {
+	max-width: 45ch;
+	line-height: 1.6;
+	font-weight: 500;
+	line-height: 2rem;
+	font-size: 1rem;
+	color: hsl(0, 36%, 70%);
+}
+strong {
+	color: hsl(0, 6%, 24%);
+	font-weight: bold;
+}
+/* -----------------
+        General
+-------------------*/
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+/* -----------------
+        hero
+-------------------*/
+.hero {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 60% 40%;
+	grid-template-rows: auto;
+	gap: 0 0;
+	grid-auto-flow: row;
+	align-items: stretch;
+	align-self: flex-start;
+	justify-content: space-between;
+	grid-template-areas:
+		"hero__logo hero__image"
+		"hero__content hero__image";
+}
+.hero__logo {
+	grid-area: hero__logo;
+}
+.hero__image {
+	background: url(images/hero-desktop.jpg) center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	grid-area: hero__image;
+}
+.hero__content {
+	grid-area: hero__content;
+}
+.hero__content,
+.hero__logo {
+	padding: 3em;
+	margin: 1em 7em;
+}
+/* -----------------
+        form
+-------------------*/
+form {
+	margin-top: 2.5em;
+	position: relative;
+	max-width: 70%;
+}
+
+input[type="email"] {
+	border: 1px solid hsl(0, 36%, 70%);
+	width: 100%;
+	border-radius: 3rem;
+	padding: 1.3em 3em;
+	text-align: left;
+	outline: none;
+	z-index: 1;
+	-webkit-border-radius: 3rem;
+	-moz-border-radius: 3rem;
+	-ms-border-radius: 3rem;
+	-o-border-radius: 3rem;
+}
+
+input:focus {
+	/* removing the input focus blue box. Put this on the form if you like. */
+	outline: none;
+}
+button {
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	color: white;
+	width: 9em;
+	height: 4em;
+	border-radius: 3rem;
+	border: none;
+	-webkit-border-radius: 3rem;
+	-moz-border-radius: 3rem;
+	-ms-border-radius: 3rem;
+	-o-border-radius: 3rem;
+	position: absolute;
+	left: 75%;
+	top: 50%;
+	transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+}
+.form__error,
+.form__error--empty {
+	display: block;
+	margin: 1em 2em;
+	font-size: 0.7rem;
+	color: red;
+}
+.form__error-img {
+	left: 65%;
+	top: 50%;
+	transform: translate(0, -50%);
+	position: absolute;
+	z-index: 5;
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+	visibility: hidden;
+}
+@media all and (max-width: 896px) {
+	.hero {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 0.5fr 25em 1.5fr;
+		text-align: center;
+		gap: 2em 2em;
+		grid-template-areas:
+			"hero__logo ."
+			" hero__image hero__image"
+			" hero__content hero__content";
+	}
+	.hero__content,
+	.hero__logo {
+		padding: 0.5em;
+		margin: 0.5em;
+		text-align: center;
+	}
+	.hero__image {
+		height: 100%;
+		background-position: 0 20%;
+		object-fit: cover;
+	}
+
+	.hero__content {
+		max-width: 80%;
+		margin: auto;
+	}
+	.hero__content p {
+		max-width: 85%;
+		margin: auto;
+	}
+	input[type="email"] {
+		margin: auto;
+		text-align: center;
+	}
+	form {
+		margin: 2em auto;
+	}
+	strong {
+		font-size: 3.6rem;
+	}
+}
+@media all and (max-width: 374px) {
+	.hero__image {
+		background: url(images/hero-mobile.jpg) no-repeat;
+		padding: 10em 0;
+	}
+	h1,
+	strong {
+		font-size: 3rem;
+	}
+	.hero {
+		max-width: 100%;
+	}
+	button {
+		width: 6em;
+	}
+}
